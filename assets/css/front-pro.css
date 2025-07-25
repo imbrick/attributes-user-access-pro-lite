@@ -1,0 +1,729 @@
+/**
+ * Attributes User Access Pro - Frontend Styles
+ *
+ * Enhanced frontend styling for authentication forms and user interfaces with:
+ * - Two-factor authentication forms
+ * - Registration form enhancements
+ * - Password strength visualization
+ * - Improved visual feedback
+ * - Advanced security elements
+ *
+ * @package Attributes\Assets\CSS
+ * @since 1.0.0
+ */
+
+/* -----------------------------------------------------------------------------
+ * 1. Pro Form Enhancements
+ * -------------------------------------------------------------------------- */
+
+.attrua-form-wrapper.attrua-pro {
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.attrua-form-wrapper.attrua-pro:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-form-header img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-form-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    color: var(--attrua-heading-color, #333333);
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-form-subheader {
+    font-size: 14px;
+    color: var(--attrua-text-muted, #6b7280);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-input {
+    transition: all 0.3s ease;
+    border-width: 1px;
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-input:hover {
+    border-color: var(--attrua-border-hover, #a1a1aa);
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-submit-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-submit-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transition: all 0.8s ease;
+}
+
+.attrua-form-wrapper.attrua-pro .attrua-submit-button:hover:before {
+    left: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+ * 2. Password Strength Meter
+ * -------------------------------------------------------------------------- */
+
+.attrua-password-strength-meter {
+    height: 5px;
+    background-color: #f0f0f0;
+    margin: 8px 0;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.attrua-password-strength-meter .strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.attrua-password-strength-meter .strength-bar.very-weak {
+    width: 20%;
+    background-color: #dc3232;
+}
+
+.attrua-password-strength-meter .strength-bar.weak {
+    width: 40%;
+    background-color: #ffb900;
+}
+
+.attrua-password-strength-meter .strength-bar.medium {
+    width: 60%;
+    background-color: #ffb900;
+}
+
+.attrua-password-strength-meter .strength-bar.strong {
+    width: 80%;
+    background-color: #00a32a;
+}
+
+.attrua-password-strength-meter .strength-bar.very-strong {
+    width: 100%;
+    background-color: #00a32a;
+}
+
+.attrua-password-strength-text {
+    font-size: 12px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.attrua-password-strength-text .strength-label {
+    font-weight: 600;
+}
+
+.attrua-password-strength-text .very-weak {
+    color: #dc3232;
+}
+
+.attrua-password-strength-text .weak {
+    color: #ffb900;
+}
+
+.attrua-password-strength-text .medium {
+    color: #ffb900;
+}
+
+.attrua-password-strength-text .strong {
+    color: #00a32a;
+}
+
+.attrua-password-strength-text .very-strong {
+    color: #00a32a;
+}
+
+/* -----------------------------------------------------------------------------
+ * 3. Two-Factor Authentication
+ * -------------------------------------------------------------------------- */
+
+.attrua-2fa-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.attrua-2fa-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--attrua-primary-color, #2563eb);
+}
+
+.attrua-2fa-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--attrua-heading-color, #333333);
+}
+
+.attrua-2fa-message {
+    margin-bottom: 20px;
+    color: var(--attrua-text-color, #4b5563);
+}
+
+.attrua-2fa-code-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.attrua-2fa-code-input input {
+    width: 50px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid var(--attrua-border-color, #d1d5db);
+    border-radius: 6px;
+}
+
+.attrua-2fa-code-input input:focus {
+    border-color: var(--attrua-primary-color, #2563eb);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+.attrua-2fa-timer {
+    margin: 15px 0;
+    font-size: 14px;
+    color: var(--attrua-text-muted, #6b7280);
+}
+
+.attrua-2fa-timer .countdown {
+    font-weight: 600;
+    color: var(--attrua-primary-color, #2563eb);
+}
+
+.attrua-2fa-methods {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.attrua-2fa-methods .attrua-2fa-method-link {
+    color: var(--attrua-link-color, #2563eb);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 10px;
+    border-right: 1px solid var(--attrua-border-color, #d1d5db);
+}
+
+.attrua-2fa-methods .attrua-2fa-method-link:last-child {
+    border-right: none;
+}
+
+.attrua-2fa-methods .attrua-2fa-method-link:hover {
+    text-decoration: underline;
+}
+
+.attrua-2fa-qr-code {
+    display: inline-block;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid var(--attrua-border-color, #d1d5db);
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.attrua-2fa-secret {
+    font-family: monospace;
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 15px 0;
+    word-break: break-all;
+    color: var(--attrua-text-color, #4b5563);
+    font-size: 14px;
+    text-align: center;
+}
+
+.attrua-2fa-recovery-codes {
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: left;
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.attrua-2fa-recovery-codes ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.attrua-2fa-recovery-codes li {
+    font-family: monospace;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--attrua-border-color, #d1d5db);
+}
+
+.attrua-2fa-recovery-codes li:last-child {
+    border-bottom: none;
+}
+
+/* -----------------------------------------------------------------------------
+ * 4. Registration Form Enhancements
+ * -------------------------------------------------------------------------- */
+
+.attrua-registration-form.attrua-pro {
+    position: relative;
+}
+
+.attrua-registration-form.attrua-pro .attrua-form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 640px) {
+    .attrua-registration-form.attrua-pro .attrua-form-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+.attrua-registration-form.attrua-pro .attrua-form-column-full {
+    grid-column: 1 / -1;
+}
+
+.attrua-custom-fields-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--attrua-border-color, #d1d5db);
+}
+
+.attrua-custom-fields-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--attrua-heading-color, #333333);
+}
+
+.attrua-form-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.attrua-form-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.attrua-form-step:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--attrua-border-color, #d1d5db);
+    z-index: 1;
+}
+
+.attrua-form-step.completed:not(:last-child):after {
+    background-color: var(--attrua-primary-color, #2563eb);
+}
+
+.attrua-form-step .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--attrua-border-color, #d1d5db);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.attrua-form-step.active .step-number {
+    background-color: var(--attrua-primary-color, #2563eb);
+}
+
+.attrua-form-step.completed .step-number {
+    background-color: var(--attrua-success-color, #059669);
+}
+
+.attrua-form-step .step-label {
+    font-size: 12px;
+    color: var(--attrua-text-muted, #6b7280);
+    text-align: center;
+}
+
+.attrua-form-step.active .step-label {
+    color: var(--attrua-primary-color, #2563eb);
+    font-weight: 600;
+}
+
+.attrua-registration-progress {
+    height: 5px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.attrua-registration-progress-bar {
+    height: 100%;
+    background-color: var(--attrua-primary-color, #2563eb);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.attrua-form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.attrua-step-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.attrua-step-prev {
+    background-color: #f9fafb;
+    color: var(--attrua-text-color, #4b5563);
+    border: 1px solid var(--attrua-border-color, #d1d5db);
+}
+
+.attrua-step-prev:hover {
+    background-color: #f3f4f6;
+}
+
+/* -----------------------------------------------------------------------------
+ * 5. Enhanced Security Visuals
+ * -------------------------------------------------------------------------- */
+
+.attrua-security-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--attrua-primary-color, #2563eb);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attrua-security-badge i,
+.attrua-security-badge svg {
+    margin-right: 5px;
+}
+
+.attrua-recaptcha-container {
+    margin: 15px 0;
+}
+
+.attrua-security-info {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--attrua-text-muted, #6b7280);
+    margin-top: 15px;
+}
+
+.attrua-security-info i,
+.attrua-security-info svg {
+    margin-right: 5px;
+    color: var(--attrua-success-color, #059669);
+}
+
+.attrua-security-notice {
+    background-color: #f8fafc;
+    border-left: 3px solid var(--attrua-primary-color, #2563eb);
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.attrua-security-notice.warning {
+    border-left-color: var(--attrua-warning-color, #f59e0b);
+    background-color: #fffbeb;
+}
+
+.attrua-security-notice.error {
+    border-left-color: var(--attrua-error-color, #dc2626);
+    background-color: #fef2f2;
+}
+
+.attrua-security-notice.success {
+    border-left-color: var(--attrua-success-color, #059669);
+    background-color: #ecfdf5;
+}
+
+.attrua-security-notice h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.attrua-security-notice p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* -----------------------------------------------------------------------------
+ * 6. Enhanced Form Feedback
+ * -------------------------------------------------------------------------- */
+
+.attrua-message-container.animated {
+    animation: attrua-slide-in-down 0.3s ease forwards;
+}
+
+@keyframes attrua-slide-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.attrua-field-error.animated {
+    animation: attrua-shake 0.5s ease;
+}
+
+@keyframes attrua-shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.attrua-input-validated {
+    position: relative;
+}
+
+.attrua-input-validated::after {
+    content: "✓";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--attrua-success-color, #059669);
+    font-weight: bold;
+}
+
+.attrua-form-row.with-loading-indicator {
+    position: relative;
+}
+
+.attrua-loading-indicator {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--attrua-primary-color, #2563eb);
+    border-radius: 50%;
+    animation: attrua-spin 1s linear infinite;
+}
+
+@keyframes attrua-spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* -----------------------------------------------------------------------------
+ * 7. Consent Checkboxes & Privacy Controls
+ * -------------------------------------------------------------------------- */
+
+.attrua-consent-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--attrua-border-color, #d1d5db);
+}
+
+.attrua-consent-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--attrua-heading-color, #333333);
+}
+
+.attrua-consent-checkbox {
+    margin-bottom: 10px;
+}
+
+.attrua-consent-checkbox label {
+    display: flex;
+    align-items: flex-start;
+}
+
+.attrua-consent-checkbox input[type="checkbox"] {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.attrua-consent-checkbox .consent-text {
+    font-size: 13px;
+    color: var(--attrua-text-color, #4b5563);
+}
+
+.attrua-consent-checkbox .consent-text a {
+    color: var(--attrua-link-color, #2563eb);
+    text-decoration: none;
+}
+
+.attrua-consent-checkbox .consent-text a:hover {
+    text-decoration: underline;
+}
+
+.attrua-privacy-link {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--attrua-text-muted, #6b7280);
+}
+
+.attrua-privacy-link a {
+    color: var(--attrua-link-color, #2563eb);
+    text-decoration: none;
+}
+
+.attrua-privacy-link a:hover {
+    text-decoration: underline;
+}
+
+/* -----------------------------------------------------------------------------
+ * 8. Social Login Buttons
+ * -------------------------------------------------------------------------- */
+
+.attrua-social-login {
+    margin: 20px 0;
+}
+
+.attrua-social-login-label {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.attrua-social-login-label:before,
+.attrua-social-login-label:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--attrua-border-color, #d1d5db);
+}
+
+.attrua-social-login-label:before {
+    left: 0;
+}
+
+.attrua-social-login-label:after {
+    right: 0;
+}
+
+.attrua-social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.attrua-social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.attrua-social-button i,
+.attrua-social-button svg {
+    margin-right: 8px;
+}
+
+.attrua-social-button.google {
+    background-color: #fff;
+    color: #4285f4;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.attrua-social-button.google:hover {
+    background-color: #f9fafb;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attrua-social-button.facebook {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+}
+
+.attrua-social-button.facebook:hover {
+    background-color: #166fe5;
+}
+
+.attrua-social-button.twitter {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+}
+
+.attrua-social-button.twitter:hover {
+    background-color: #0d95e8;
+}
+
+.attrua-social-button.github {
+    background-color: #24292e;
+    color: #fff;
+    border: none;
+}
+
+.attrua-social-button.github:hover {
+    background-color: #1d2125;
+}

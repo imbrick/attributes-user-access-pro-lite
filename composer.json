@@ -1,0 +1,20 @@
+{
+    "name": "attributes/user-access-pro",
+    "description": "Premium extension for Attributes User Access adding advanced security, social login, and form customization",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Attributes\\Pro\\": "src/Pro/",
+            "Attributes\\Front\\": "src/Front/",
+            "Attributes\\Security\\": "src/Security/"
+        },
+        "classmap": [
+            "includes/"
+        ]
+    }
+}
